@@ -1,0 +1,83 @@
+## Guides ##
+  * [How to install Android for Omnia 2](http://code.google.com/p/omnia2droid/wiki/Guides#How_to_install_Android_for_Omnia_2)
+  * [Optional dualboot](http://code.google.com/p/omnia2droid/wiki/Guides#Optional_dualboot)
+  * [Tweaking and manual install](http://code.google.com/p/omnia2droid/wiki/Guides#Tweaking_and_manual_install)
+  * [WinMo PIM backup and then restore it to Android](http://code.google.com/p/omnia2droid/wiki/Guides#WinMo_PIM_backup_and_then_restore_it_to_Android)
+  * [Configuring your device and installing apps using the Android Debug Bridge (ADB)](http://code.google.com/p/omnia2droid/wiki/InstallAppsADB)
+
+
+---
+
+## How to install Android for Omnia 2 ##
+_DISCLAIMER: own risk, but enjoy!_
+
+first, getting the files:
+  * get  CyanogenMod beta 1 from [here](http://o2droid.phj.hu/index_en.php). One of them creates 1 GB partition on SD card, other one 1 GB or more. No difference except that.
+  * get update files from same site. this file includes all of the updates from first release.
+  * IMPORTANT: You will need an untouched "My Storage" for installing. This means that your "My Storage" has a partition #5 and a (hidden) partition #6. If you have not, or you are not sure you have, and the installer complains about missing partition on "My Storage", flash a WM rom (offcourse, BACK UP data first!)
+
+
+
+
+Install procedures:
+  1. Put all files in cm\_beta1.zip to My Storage.
+  1. if you want to install to "SD card" from "My storage" ignore next 2 steps.
+  1. if you want to install to my storage, read included readme in cm\_beta1.zip carefully.
+  1. in windows mobile, using a file explorer enter o2beta folder, run androidinstall.exe. After that install process will turn off windows mobile. Installer seems stopped on two points. Shrinking partitons and creating new one step, and untar ext4.tar.gz step. Be patience, it supposed to take some time. After untarring step, you should see a kernel panic and restarting in 30 seconds. This is not a problem.
+  1. You can delete o2beta folder and the ext4.tar.gz from your phone for disk space.Run haret, and click on run.
+  1. android will boot for first time. It will take long, for this time only. When Android starts, it will ask for a action, select default action. Other one needs internet connection, doesn't lets skipping and some times even after adding google account it starts over forever.
+  1. after adding accounts, and setting time, you have first version of android on omniaII project. You can use it, but there is updates with some critical fixes, so keep going.
+  1. restart your phone with press and hold lockscreen button, and select power off. Than start windows mobile normally.
+  1. If you need to use 2g/3g/edge and your provider is not in the list, enter settings > wireless & networks > mobile networks > access point names. press cube button, click new APN. Enter your providers settings. after settings, press cube again, click save APN. You should be in same menu, select new created APN. In task bar you will see data symbol ( 3g/E etc ).
+
+Everything is ready for use, enjoy.
+
+### Optional dualboot ###
+You can start Haret as a program or shortcut from Win-Mo, but also use a bootloader. This program is  executed automaticly after Win-Mo boot, but before loading Today screens and other widgets. The loader lets you you choose if you want to stay in Win-Mo or boot linux.  A nice bootloader is Gen.Y DualBOOT and info can be found [here](http://forum.xda-developers.com/showthread.php?t=623792).
+  * Get Gen.Y DualBOOT from [megaupload](http://www.megaupload.com/?d=HRPO9CC7)
+  * Only use "Gen.Y DualBOOT WVGA v1.0.6.0 - Storage Card.cab" delete other cabs
+  * Install cab on "Internal Storage" (otherwise doesn't work)
+  * Copy/move Harret.exe and default.txt to root of memory card (FAT32)
+  * If you want fastboot (no pushing OK in Haret) rename default.txt to startup.txt
+
+### Tweaking and manual install ###
+_DISCLAIMER: this tweaking section is for experts only, you can realy mess up your omnia2 and your laptop/pc if you don't know what you are doing !! own risk, but enjoy !!_
+
+A good guide for manual install can be found [here](http://www.modaco.com/topic/346446-froyo-beta-3-for-omnia-2-updated-18102011/page__view__findpost__p__1829477). Guide provided by **Gardakkan**
+
+The sd.cpio.gz contains tools and scripts which prepares the external microSD card for Android. It tries to shrink the existing FAT32 partition and put a small ext2 filesystem on the first partition and the FAT32 as a second partition. Afterwards it copies the rootfs to the ext2 partition.
+
+You can prepare your own (linux) partitions on microSD but you will need some (linux) tools to do that. Also you need to copy the rootfs to the (linux) partitions and change the harret configuration file where to find the rootfs. You may have to change some init files inside the rootfs so Android will mount the right volumes on startup.
+
+An nice linux tool for manipulating (disk)partitions is [PartedMagic](http://partedmagic.com/download.html), and if you don't have linux installed you can use [UnetBootin](http://unetbootin.sourceforge.net/) make a bootable linux USB stick to run PartedMagic from. Just boot the LiveUSB stick to mess with your partitions.
+
+To change the harret configuration file where to find the rootfs. You will find a string like /dev/mmcblk1p2. "k1" means external microSD and "k0" means internal SD storage, "p1" means partition 1.
+
+### WinMo PIM backup and then restore it to Android ###
+
+**Method 1 (Via Active Sync)**
+
+  * Go to ActiveSync then press Menu>Configure Server
+  * Type your GOOGLE E-mail address then press Next
+  * Type (m.google.com) in the Server address field [brackets of course](without.md) then Next
+  * Type your User Name & Passwrod & Type (Google) as a Domain then Next
+  * choose what you want to sync and then press Finish [Settings for each content .. for example the Calender sync(s) only the last 2 weeks by Default](check.md)
+  * Now your PIM are stored in Google servers and then you can restore them to your Device under Android easily (as I remember it was possible to do in the first adjustments after first launch of the system) but you need to have a working internet connection ..
+
+**Method 2 (Via SIM card)**
+
+  * Go to Phonebook application and press Menu>Copy>Phone to SIM
+  * choose the contacts you want to copy (or all by checking the first rectangle) then press Done
+  * Now your contacts are stored in your SIM card .. Restore them in Android from the phone application ..
+  * This method can ONLY copy the mobile field in your contacts (i.e homeland Number won't be saved) but this works without any need to Internet connection or having to install any program whatsoever and it's fast ..
+
+**Method 3 (using Sprite Programs)**
+
+  * First go to this [site](http://www.spritesoftware.com/Products/Migrate/Migrate-Your-Data-Now/Download-Windows) and download the WinMo program
+  * Install the first program on your device when running WinMo (obviously) , walk through the steps and after it finishes you'll have a file that contains your PIM (by default it's in My Storage and called Image)
+  * Now go to this [site](http://www.spritesoftware.com/Products/Migrate/Migrate-Your-Data-Now/Convert-Data) and download the program
+  * Download the second program on your computer , and use it to convert your PIM database to Android form
+  * Then go to this [site](http://www.spritesoftware.com/products/Migrate-(1)/Steps-to-Migrate/Load-Data) , and download the Android program
+  * Download the third program on your Omnia2droid and use it to restore the CONVERTED database ..
+  * This method is kinda slow .. but using it allows you to restore your PIM including your SMSs especially when you are unable to connect to the Internet and you need your text messages ..
+  * ## IMPORTANT : this method will erase all PIM that are stored on your device in Android ##

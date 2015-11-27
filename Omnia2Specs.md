@@ -1,0 +1,45 @@
+### Size&Weight ###
+  * 118 x 59.6 x 12.3 mm
+  * 123g
+
+### General ###
+  * CPU S3C6410, max frequency 800MHZ
+  * Dedicated graphics accelerator (built in S3C6410)
+  * 2/8/16G  storage
+  * 256 Mb RAM
+  * 512 Mb ROM
+  * Li-on 1500mAh battery
+  * Original Standby time:	Up to 430h (2G or 3G)
+  * Original Talk time:	Up to  12h (2G) Up to   8h (3G)
+
+### Screen ###
+  * 3.7 inches
+  * 480x800 Pixels
+  * 16M colors AMOLED (65K effective colors on Windows Mobile)
+  * Resistive touchscreen
+
+### Camera ###
+  * 5 Megapixel Camera (2560x1920 pixels)
+  * Autofocus
+  * Dual Power LED Flash
+  * Video recording 720x480@30fps
+  * Secondary Video Camera 640x480
+
+### Sensors ###
+  * Accelerometer (3 axis) (Kionix KXSD9 chip)
+  * Magnetic sensor (3 axis) (AKM AK8973B chip)
+  * Light sensor (Intersil ISL29023 chip)
+  * Proximity sensor
+
+### Wireless ###
+  * HSPDA 900/1900/2100 7.2Mbps ; HSUPA 5.76Mbps (Qualcomm MSM6290 chip)
+  * Wi-Fi 802.11 b/g (MARVEL88W8686 chip)
+  * Bluetooth 2.0 with ADP (Broadcom chip)
+  * GPS with A-GPS support
+
+### Input/output ###
+  * 3.5 mm output jack (audio jack + TV-Out)
+  * MicroUSB 2.0
+  * MicroSD slot (up to 32 Gb)
+  * Mic Noise Canceller
+  * Stereo FM radio with RDS support
